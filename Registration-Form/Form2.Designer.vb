@@ -22,6 +22,7 @@ Partial Class Form2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         DataGridView1 = New DataGridView()
         Label24 = New Label()
         Label23 = New Label()
@@ -544,9 +545,11 @@ Partial Class Form2
         Controls.Add(Label16)
         Controls.Add(Label3)
         Controls.Add(DataGridView1)
+        FormBorderStyle = FormBorderStyle.FixedSingle
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MaximizeBox = False
         Name = "Form2"
-        Text = "Form2"
+        Text = "Records"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
