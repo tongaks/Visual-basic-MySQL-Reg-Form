@@ -22,6 +22,7 @@ Partial Class RegistrationForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegistrationForm))
         Label6 = New Label()
         Panel1 = New Panel()
         ViewRecordBtn = New Button()
@@ -64,6 +65,7 @@ Partial Class RegistrationForm
         SurnameTxtBox = New TextBox()
         MiddleNameTxtBox = New TextBox()
         FirstNameTxtBox = New TextBox()
+        BackgroundWorker1 = New ComponentModel.BackgroundWorker()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         SuspendLayout()
@@ -71,47 +73,51 @@ Partial Class RegistrationForm
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label6.Location = New Point(131, 14)
+        Label6.Font = New Font("Segoe UI Semilight", 14.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label6.ForeColor = SystemColors.ControlLightLight
+        Label6.Location = New Point(154, 15)
         Label6.Name = "Label6"
-        Label6.Size = New Size(165, 25)
+        Label6.Size = New Size(155, 25)
         Label6.TabIndex = 12
         Label6.Text = "Registration Form"
         ' 
         ' Panel1
         ' 
         Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        Panel1.BackColor = Color.MediumAquamarine
+        Panel1.BackColor = Color.SteelBlue
         Panel1.Controls.Add(ViewRecordBtn)
         Panel1.Controls.Add(Label22)
         Panel1.Controls.Add(Label6)
         Panel1.Location = New Point(-1, -1)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(748, 54)
+        Panel1.Size = New Size(765, 58)
         Panel1.TabIndex = 34
         ' 
         ' ViewRecordBtn
         ' 
         ViewRecordBtn.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        ViewRecordBtn.BackColor = Color.Orange
+        ViewRecordBtn.BackColor = Color.DarkSalmon
         ViewRecordBtn.FlatAppearance.BorderSize = 0
         ViewRecordBtn.FlatStyle = FlatStyle.Flat
-        ViewRecordBtn.Location = New Point(592, 12)
+        ViewRecordBtn.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        ViewRecordBtn.ForeColor = SystemColors.ControlLightLight
+        ViewRecordBtn.Location = New Point(592, 13)
         ViewRecordBtn.Name = "ViewRecordBtn"
-        ViewRecordBtn.Size = New Size(134, 35)
+        ViewRecordBtn.Size = New Size(134, 37)
         ViewRecordBtn.TabIndex = 14
-        ViewRecordBtn.Text = "View records"
+        ViewRecordBtn.Text = "RECORDS"
         ViewRecordBtn.UseVisualStyleBackColor = False
         ' 
         ' Label22
         ' 
         Label22.AutoSize = True
-        Label22.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label22.Location = New Point(13, 14)
+        Label22.Font = New Font("Segoe UI Black", 14F, FontStyle.Bold)
+        Label22.ForeColor = SystemColors.ControlLightLight
+        Label22.Location = New Point(13, 15)
         Label22.Name = "Label22"
-        Label22.Size = New Size(117, 25)
+        Label22.Size = New Size(147, 25)
         Label22.TabIndex = 13
-        Label22.Text = "Barangay ID"
+        Label22.Text = "BARANGAY ID"
         ' 
         ' Panel2
         ' 
@@ -153,9 +159,9 @@ Partial Class RegistrationForm
         Panel2.Controls.Add(SurnameTxtBox)
         Panel2.Controls.Add(MiddleNameTxtBox)
         Panel2.Controls.Add(FirstNameTxtBox)
-        Panel2.Location = New Point(22, 68)
+        Panel2.Location = New Point(12, 76)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(703, 452)
+        Panel2.Size = New Size(720, 486)
         Panel2.TabIndex = 35
         ' 
         ' TextBox1
@@ -163,7 +169,7 @@ Partial Class RegistrationForm
         TextBox1.Anchor = AnchorStyles.Top
         TextBox1.BackColor = SystemColors.Window
         TextBox1.Enabled = False
-        TextBox1.Location = New Point(453, 14)
+        TextBox1.Location = New Point(453, 15)
         TextBox1.Margin = New Padding(3, 2, 3, 2)
         TextBox1.Name = "TextBox1"
         TextBox1.ReadOnly = True
@@ -178,9 +184,9 @@ Partial Class RegistrationForm
         Label24.AutoSize = True
         Label24.Font = New Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label24.ForeColor = SystemColors.ControlDarkDark
-        Label24.Location = New Point(202, 267)
+        Label24.Location = New Point(202, 285)
         Label24.Name = "Label24"
-        Label24.Size = New Size(70, 15)
+        Label24.Size = New Size(70, 16)
         Label24.TabIndex = 1036
         Label24.Text = "Street name"
         ' 
@@ -190,9 +196,9 @@ Partial Class RegistrationForm
         Label23.AutoSize = True
         Label23.Font = New Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label23.ForeColor = SystemColors.ControlDarkDark
-        Label23.Location = New Point(122, 267)
+        Label23.Location = New Point(122, 285)
         Label23.Name = "Label23"
-        Label23.Size = New Size(49, 15)
+        Label23.Size = New Size(50, 16)
         Label23.TabIndex = 1035
         Label23.Text = "Blck/Lot"
         ' 
@@ -202,7 +208,7 @@ Partial Class RegistrationForm
         Label21.AutoSize = True
         Label21.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label21.ForeColor = Color.Firebrick
-        Label21.Location = New Point(267, 426)
+        Label21.Location = New Point(267, 454)
         Label21.Name = "Label21"
         Label21.Size = New Size(51, 13)
         Label21.TabIndex = 1034
@@ -213,9 +219,9 @@ Partial Class RegistrationForm
         ConfirmationChckBox.Anchor = AnchorStyles.Top
         ConfirmationChckBox.AutoSize = True
         ConfirmationChckBox.Font = New Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        ConfirmationChckBox.Location = New Point(249, 402)
+        ConfirmationChckBox.Location = New Point(249, 429)
         ConfirmationChckBox.Name = "ConfirmationChckBox"
-        ConfirmationChckBox.Size = New Size(328, 21)
+        ConfirmationChckBox.Size = New Size(336, 21)
         ConfirmationChckBox.TabIndex = 1018
         ConfirmationChckBox.Text = "I confirm that all details above is correct and accurate"
         ConfirmationChckBox.UseVisualStyleBackColor = True
@@ -226,7 +232,7 @@ Partial Class RegistrationForm
         Label20.AutoSize = True
         Label20.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label20.ForeColor = Color.Firebrick
-        Label20.Location = New Point(123, 362)
+        Label20.Location = New Point(123, 386)
         Label20.Name = "Label20"
         Label20.Size = New Size(51, 13)
         Label20.TabIndex = 1033
@@ -235,7 +241,7 @@ Partial Class RegistrationForm
         ' PostalCodeTxtBox
         ' 
         PostalCodeTxtBox.Anchor = AnchorStyles.Top
-        PostalCodeTxtBox.Location = New Point(389, 337)
+        PostalCodeTxtBox.Location = New Point(389, 359)
         PostalCodeTxtBox.Margin = New Padding(3, 2, 3, 2)
         PostalCodeTxtBox.Name = "PostalCodeTxtBox"
         PostalCodeTxtBox.Size = New Size(79, 23)
@@ -246,9 +252,9 @@ Partial Class RegistrationForm
         Label18.Anchor = AnchorStyles.Top
         Label18.AutoSize = True
         Label18.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        Label18.Location = New Point(306, 338)
+        Label18.Location = New Point(306, 361)
         Label18.Name = "Label18"
-        Label18.Size = New Size(76, 17)
+        Label18.Size = New Size(73, 17)
         Label18.TabIndex = 1032
         Label18.Text = "PostalCode"
         ' 
@@ -256,9 +262,9 @@ Partial Class RegistrationForm
         ' 
         Label19.Anchor = AnchorStyles.Top
         Label19.AutoSize = True
-        Label19.Location = New Point(363, 340)
+        Label19.Location = New Point(363, 363)
         Label19.Name = "Label19"
-        Label19.Size = New Size(0, 15)
+        Label19.Size = New Size(0, 16)
         Label19.TabIndex = 1031
         ' 
         ' Label17
@@ -266,9 +272,9 @@ Partial Class RegistrationForm
         Label17.Anchor = AnchorStyles.Top
         Label17.AutoSize = True
         Label17.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        Label17.Location = New Point(34, 338)
+        Label17.Location = New Point(34, 361)
         Label17.Name = "Label17"
-        Label17.Size = New Size(81, 17)
+        Label17.Size = New Size(83, 17)
         Label17.TabIndex = 1030
         Label17.Text = "Municipality"
         ' 
@@ -276,32 +282,34 @@ Partial Class RegistrationForm
         ' 
         Label16.Anchor = AnchorStyles.Top
         Label16.AutoSize = True
-        Label16.Location = New Point(76, 340)
+        Label16.Location = New Point(76, 363)
         Label16.Name = "Label16"
-        Label16.Size = New Size(0, 15)
+        Label16.Size = New Size(0, 16)
         Label16.TabIndex = 1029
         ' 
         ' MunicipalityCmbBox
         ' 
         MunicipalityCmbBox.Anchor = AnchorStyles.Top
         MunicipalityCmbBox.FormattingEnabled = True
-        MunicipalityCmbBox.Location = New Point(122, 337)
+        MunicipalityCmbBox.Location = New Point(122, 359)
         MunicipalityCmbBox.Margin = New Padding(3, 2, 3, 2)
         MunicipalityCmbBox.Name = "MunicipalityCmbBox"
-        MunicipalityCmbBox.Size = New Size(157, 23)
+        MunicipalityCmbBox.Size = New Size(157, 24)
         MunicipalityCmbBox.TabIndex = 1015
         ' 
         ' RegisterBtn
         ' 
         RegisterBtn.Anchor = AnchorStyles.Top
-        RegisterBtn.BackColor = Color.LimeGreen
+        RegisterBtn.BackColor = Color.SteelBlue
         RegisterBtn.FlatAppearance.BorderSize = 0
         RegisterBtn.FlatStyle = FlatStyle.Flat
-        RegisterBtn.Location = New Point(583, 402)
+        RegisterBtn.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        RegisterBtn.ForeColor = SystemColors.ControlLightLight
+        RegisterBtn.Location = New Point(591, 429)
         RegisterBtn.Name = "RegisterBtn"
-        RegisterBtn.Size = New Size(107, 37)
+        RegisterBtn.Size = New Size(99, 39)
         RegisterBtn.TabIndex = 1019
-        RegisterBtn.Text = "Register"
+        RegisterBtn.Text = "REGISTER"
         RegisterBtn.UseVisualStyleBackColor = False
         ' 
         ' Label15
@@ -310,7 +318,7 @@ Partial Class RegistrationForm
         Label15.AutoSize = True
         Label15.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label15.ForeColor = Color.Firebrick
-        Label15.Location = New Point(122, 309)
+        Label15.Location = New Point(122, 330)
         Label15.Name = "Label15"
         Label15.Size = New Size(51, 13)
         Label15.TabIndex = 1028
@@ -322,7 +330,7 @@ Partial Class RegistrationForm
         Label14.AutoSize = True
         Label14.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label14.ForeColor = Color.Firebrick
-        Label14.Location = New Point(123, 39)
+        Label14.Location = New Point(123, 42)
         Label14.Name = "Label14"
         Label14.Size = New Size(51, 13)
         Label14.TabIndex = 1027
@@ -334,7 +342,7 @@ Partial Class RegistrationForm
         Label13.AutoSize = True
         Label13.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label13.ForeColor = Color.Firebrick
-        Label13.Location = New Point(454, 39)
+        Label13.Location = New Point(454, 42)
         Label13.Name = "Label13"
         Label13.Size = New Size(51, 13)
         Label13.TabIndex = 1026
@@ -346,7 +354,7 @@ Partial Class RegistrationForm
         Label12.AutoSize = True
         Label12.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label12.ForeColor = Color.Firebrick
-        Label12.Location = New Point(123, 225)
+        Label12.Location = New Point(123, 240)
         Label12.Name = "Label12"
         Label12.Size = New Size(51, 13)
         Label12.TabIndex = 1025
@@ -358,7 +366,7 @@ Partial Class RegistrationForm
         Label11.AutoSize = True
         Label11.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label11.ForeColor = Color.Firebrick
-        Label11.Location = New Point(267, 175)
+        Label11.Location = New Point(267, 187)
         Label11.Name = "Label11"
         Label11.Size = New Size(51, 13)
         Label11.TabIndex = 1024
@@ -370,7 +378,7 @@ Partial Class RegistrationForm
         Label10.AutoSize = True
         Label10.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label10.ForeColor = Color.Firebrick
-        Label10.Location = New Point(123, 123)
+        Label10.Location = New Point(123, 131)
         Label10.Name = "Label10"
         Label10.Size = New Size(51, 13)
         Label10.TabIndex = 1023
@@ -381,16 +389,16 @@ Partial Class RegistrationForm
         Label9.Anchor = AnchorStyles.Top
         Label9.AutoSize = True
         Label9.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        Label9.Location = New Point(357, 61)
+        Label9.Location = New Point(357, 65)
         Label9.Name = "Label9"
-        Label9.Size = New Size(91, 17)
+        Label9.Size = New Size(88, 17)
         Label9.TabIndex = 1022
         Label9.Text = "Email address"
         ' 
         ' EmailTxtBox
         ' 
         EmailTxtBox.Anchor = AnchorStyles.Top
-        EmailTxtBox.Location = New Point(454, 61)
+        EmailTxtBox.Location = New Point(454, 65)
         EmailTxtBox.Margin = New Padding(3, 2, 3, 2)
         EmailTxtBox.Name = "EmailTxtBox"
         EmailTxtBox.Size = New Size(219, 23)
@@ -401,16 +409,16 @@ Partial Class RegistrationForm
         Label8.Anchor = AnchorStyles.Top
         Label8.AutoSize = True
         Label8.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        Label8.Location = New Point(367, 15)
+        Label8.Location = New Point(367, 16)
         Label8.Name = "Label8"
-        Label8.Size = New Size(80, 17)
+        Label8.Size = New Size(78, 17)
         Label8.TabIndex = 1021
         Label8.Text = "Contact No."
         ' 
         ' ContactNoTxtBox
         ' 
         ContactNoTxtBox.Anchor = AnchorStyles.Top
-        ContactNoTxtBox.Location = New Point(482, 14)
+        ContactNoTxtBox.Location = New Point(482, 15)
         ContactNoTxtBox.Margin = New Padding(3, 2, 3, 2)
         ContactNoTxtBox.Name = "ContactNoTxtBox"
         ContactNoTxtBox.Size = New Size(191, 23)
@@ -421,9 +429,9 @@ Partial Class RegistrationForm
         Label7.Anchor = AnchorStyles.Top
         Label7.AutoSize = True
         Label7.Font = New Font("Segoe UI", 10F)
-        Label7.Location = New Point(237, 150)
+        Label7.Location = New Point(237, 160)
         Label7.Name = "Label7"
-        Label7.Size = New Size(29, 19)
+        Label7.Size = New Size(31, 18)
         Label7.TabIndex = 1020
         Label7.Text = "Sex"
         ' 
@@ -432,10 +440,10 @@ Partial Class RegistrationForm
         SexCmbBox.Anchor = AnchorStyles.Top
         SexCmbBox.FormattingEnabled = True
         SexCmbBox.Items.AddRange(New Object() {"Male", "Female"})
-        SexCmbBox.Location = New Point(267, 149)
+        SexCmbBox.Location = New Point(267, 159)
         SexCmbBox.Margin = New Padding(3, 2, 3, 2)
         SexCmbBox.Name = "SexCmbBox"
-        SexCmbBox.Size = New Size(98, 23)
+        SexCmbBox.Size = New Size(98, 24)
         SexCmbBox.TabIndex = 1006
         ' 
         ' Label5
@@ -443,9 +451,9 @@ Partial Class RegistrationForm
         Label5.Anchor = AnchorStyles.Top
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        Label5.Location = New Point(77, 152)
+        Label5.Location = New Point(77, 162)
         Label5.Name = "Label5"
-        Label5.Size = New Size(41, 17)
+        Label5.Size = New Size(42, 17)
         Label5.TabIndex = 1017
         Label5.Text = "Suffix"
         ' 
@@ -454,10 +462,10 @@ Partial Class RegistrationForm
         SuffixCmbBox.Anchor = AnchorStyles.Top
         SuffixCmbBox.FormattingEnabled = True
         SuffixCmbBox.Items.AddRange(New Object() {"Jr.", "Sr.", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"})
-        SuffixCmbBox.Location = New Point(123, 149)
+        SuffixCmbBox.Location = New Point(123, 159)
         SuffixCmbBox.Margin = New Padding(3, 2, 3, 2)
         SuffixCmbBox.Name = "SuffixCmbBox"
-        SuffixCmbBox.Size = New Size(98, 23)
+        SuffixCmbBox.Size = New Size(98, 24)
         SuffixCmbBox.TabIndex = 1004
         ' 
         ' Label1
@@ -465,7 +473,7 @@ Partial Class RegistrationForm
         Label1.Anchor = AnchorStyles.Top
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        Label1.Location = New Point(52, 204)
+        Label1.Location = New Point(52, 218)
         Label1.Name = "Label1"
         Label1.Size = New Size(68, 17)
         Label1.TabIndex = 1014
@@ -474,7 +482,7 @@ Partial Class RegistrationForm
         ' DateTimePicker1
         ' 
         DateTimePicker1.Anchor = AnchorStyles.Top
-        DateTimePicker1.Location = New Point(122, 202)
+        DateTimePicker1.Location = New Point(122, 215)
         DateTimePicker1.Margin = New Padding(3, 2, 3, 2)
         DateTimePicker1.Name = "DateTimePicker1"
         DateTimePicker1.Size = New Size(220, 23)
@@ -485,9 +493,9 @@ Partial Class RegistrationForm
         Label3.Anchor = AnchorStyles.Top
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        Label3.Location = New Point(13, 285)
+        Label3.Location = New Point(13, 304)
         Label3.Name = "Label3"
-        Label3.Size = New Size(105, 17)
+        Label3.Size = New Size(101, 17)
         Label3.TabIndex = 1011
         Label3.Text = "Current address"
         ' 
@@ -496,9 +504,9 @@ Partial Class RegistrationForm
         Label4.Anchor = AnchorStyles.Top
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        Label4.Location = New Point(53, 100)
+        Label4.Location = New Point(53, 107)
         Label4.Name = "Label4"
-        Label4.Size = New Size(62, 17)
+        Label4.Size = New Size(61, 17)
         Label4.TabIndex = 1010
         Label4.Text = "Surname"
         ' 
@@ -507,9 +515,9 @@ Partial Class RegistrationForm
         Label2.Anchor = AnchorStyles.Top
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        Label2.Location = New Point(29, 62)
+        Label2.Location = New Point(29, 66)
         Label2.Name = "Label2"
-        Label2.Size = New Size(87, 17)
+        Label2.Size = New Size(85, 17)
         Label2.TabIndex = 1007
         Label2.Text = "Middle name"
         ' 
@@ -518,16 +526,16 @@ Partial Class RegistrationForm
         FnameLbl.Anchor = AnchorStyles.Top
         FnameLbl.AutoSize = True
         FnameLbl.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        FnameLbl.Location = New Point(45, 16)
+        FnameLbl.Location = New Point(45, 17)
         FnameLbl.Name = "FnameLbl"
-        FnameLbl.Size = New Size(72, 17)
+        FnameLbl.Size = New Size(71, 17)
         FnameLbl.TabIndex = 1005
         FnameLbl.Text = "First name"
         ' 
         ' AddressTxtBox
         ' 
         AddressTxtBox.Anchor = AnchorStyles.Top
-        AddressTxtBox.Location = New Point(122, 284)
+        AddressTxtBox.Location = New Point(122, 303)
         AddressTxtBox.Margin = New Padding(3, 2, 3, 2)
         AddressTxtBox.Name = "AddressTxtBox"
         AddressTxtBox.Size = New Size(534, 23)
@@ -536,7 +544,7 @@ Partial Class RegistrationForm
         ' SurnameTxtBox
         ' 
         SurnameTxtBox.Anchor = AnchorStyles.Top
-        SurnameTxtBox.Location = New Point(122, 98)
+        SurnameTxtBox.Location = New Point(122, 105)
         SurnameTxtBox.Margin = New Padding(3, 2, 3, 2)
         SurnameTxtBox.Name = "SurnameTxtBox"
         SurnameTxtBox.Size = New Size(219, 23)
@@ -545,7 +553,7 @@ Partial Class RegistrationForm
         ' MiddleNameTxtBox
         ' 
         MiddleNameTxtBox.Anchor = AnchorStyles.Top
-        MiddleNameTxtBox.Location = New Point(122, 60)
+        MiddleNameTxtBox.Location = New Point(122, 64)
         MiddleNameTxtBox.Margin = New Padding(3, 2, 3, 2)
         MiddleNameTxtBox.Name = "MiddleNameTxtBox"
         MiddleNameTxtBox.Size = New Size(219, 23)
@@ -554,7 +562,7 @@ Partial Class RegistrationForm
         ' FirstNameTxtBox
         ' 
         FirstNameTxtBox.Anchor = AnchorStyles.Top
-        FirstNameTxtBox.Location = New Point(122, 14)
+        FirstNameTxtBox.Location = New Point(122, 15)
         FirstNameTxtBox.Margin = New Padding(3, 2, 3, 2)
         FirstNameTxtBox.Name = "FirstNameTxtBox"
         FirstNameTxtBox.Size = New Size(219, 23)
@@ -562,14 +570,18 @@ Partial Class RegistrationForm
         ' 
         ' RegistrationForm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7F, 16F)
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
-        BackColor = SystemColors.ControlLight
-        ClientSize = New Size(747, 538)
+        BackColor = SystemColors.ButtonFace
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        ClientSize = New Size(747, 574)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
+        FormBorderStyle = FormBorderStyle.FixedSingle
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "RegistrationForm"
+        RightToLeft = RightToLeft.No
         Text = "Registration Form"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
@@ -620,5 +632,6 @@ Partial Class RegistrationForm
     Friend WithEvents SurnameTxtBox As TextBox
     Friend WithEvents MiddleNameTxtBox As TextBox
     Friend WithEvents FirstNameTxtBox As TextBox
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 
 End Class

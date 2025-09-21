@@ -1,8 +1,9 @@
 ﻿Imports System.Data.OleDb
+Imports System.Drawing.Drawing2D
 Imports System.IO
-Imports Windows.Win32.System
 Imports MySql.Data
 Imports MySql.Data.MySqlClient
+Imports Windows.Win32.System
 
 
 Public Class RegistrationForm
@@ -12,6 +13,7 @@ Public Class RegistrationForm
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim CurrentPath As String = Directory.GetCurrentDirectory()
         Dim DirInfo As New DirectoryInfo(CurrentPath)
+
 
         ' move 4 up para tumutok sa parent dir ng project
         For i As Integer = 1 To 4
@@ -259,4 +261,7 @@ Public Class RegistrationForm
         End If
     End Sub
 
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
 End Class
