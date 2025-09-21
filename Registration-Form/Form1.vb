@@ -103,13 +103,13 @@ Public Class RegistrationForm
     End Sub
 
 
-    Private Sub LetterOnly_KeyPress(sender As Object, e As KeyPressEventArgs) Handles FirstNameTxtBox.KeyPress, SurnameTxtBox.KeyPress, MiddleNameTxtBox.KeyPress
+    Private Sub LetterOnly_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Char.IsDigit(e.KeyChar) And Not Asc(e.KeyChar) = 8 Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub NumberOnly_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ContactNoTxtBox.KeyPress, PostalCodeTxtBox.KeyPress
+    Private Sub NumberOnly_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsDigit(e.KeyChar) And Not Asc(e.KeyChar) = 8 Then
             e.Handled = True
         End If
@@ -117,7 +117,7 @@ Public Class RegistrationForm
 
 
 
-    Private Sub ContactNoLimit(sender As Object, e As EventArgs) Handles ContactNoTxtBox.TextChanged
+    Private Sub ContactNoLimit(sender As Object, e As EventArgs)
         If ContactNoTxtBox.TextLength >= 11 Then
             ContactNoTxtBox.Text = ContactNoTxtBox.Text.Remove(ContactNoTxtBox.TextLength - 1)
             ContactNoTxtBox.Select(ContactNoTxtBox.TextLength, 1)
@@ -126,32 +126,37 @@ Public Class RegistrationForm
 
 
 
-    Private Sub RegisterBtn_Click(sender As Object, e As EventArgs) Handles RegisterBtn.Click
+    Private Sub RegisterBtn_Click(sender As Object, e As EventArgs)
         If Not ValidateRequiredFields() Then
             Exit Sub
         End If
 
         Dim firstName = FirstNameTxtBox.Text
-        Dim middleName = If((MiddleNameTxtBox.Text = ""), "N/A", MiddleNameTxtBox.Text)
+        Dim middleName = If(MiddleNameTxtBox.Text = "", "N/A", MiddleNameTxtBox.Text)
         Dim surName = SurnameTxtBox.Text
-        Dim suffix = If((SuffixCmbBox.Text = ""), "N/A", SuffixCmbBox.Text)
+        Dim suffix = If(SuffixCmbBox.Text = "", "N/A", SuffixCmbBox.Text)
         Dim sex = SexCmbBox.Text
 
         Dim contactNo = ContactNoTxtBox.Text
-        Dim emailAddr = If((EmailTxtBox.Text = ""), "N/A", EmailTxtBox.Text)
+        Dim emailAddr = If(EmailTxtBox.Text = "", "N/A", EmailTxtBox.Text)
 
         Dim birthDate = DateTimePicker1.Value
         Dim birthDateFix = birthDate.ToString("M/d/yyyy")
 
         Dim address = AddressTxtBox.Text
         Dim municipality = MunicipalityCmbBox.Text
-        Dim postalCode = If((PostalCodeTxtBox.Text = ""), "N/A", PostalCodeTxtBox.Text)
+        Dim postalCode = If(PostalCodeTxtBox.Text = "", "N/A", PostalCodeTxtBox.Text)
 
         AddRecord(surName, firstName, middleName, suffix, sex, contactNo, emailAddr, birthDateFix, address, municipality, postalCode)
         ClearAllTextBox()
+
+        Dim res = MsgBox("Would you like to see the records?", MsgBoxStyle.YesNoCancel, "Notice")
+        If res = MsgBoxResult.Yes Then
+            Form2.Show(Me)
+        End If
     End Sub
 
-    Private Sub ConfirmationChckBox_KeyDown(sender As Object, e As KeyEventArgs) Handles ConfirmationChckBox.KeyDown
+    Private Sub ConfirmationChckBox_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             If ConfirmationChckBox.Checked = False Then
                 ConfirmationChckBox.Checked = True
@@ -241,12 +246,12 @@ Public Class RegistrationForm
         Form2.Show()
     End Sub
 
-    Private Sub SexCmbBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles SexCmbBox.KeyPress
+    Private Sub SexCmbBox_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = True
     End Sub
 
-    Private Sub TextBox_Limit(sender As Object, e As EventArgs) Handles FirstNameTxtBox.TextChanged, MiddleNameTxtBox.TextChanged, SurnameTxtBox.TextChanged, EmailTxtBox.TextChanged
-        Dim caller As TextBox = DirectCast(sender, TextBox)
+    Private Sub TextBox_Limit(sender As Object, e As EventArgs)
+        Dim caller = DirectCast(sender, TextBox)
         If caller.TextLength > 255 Then
             MsgBox("Limit reached.")
             caller.Text = caller.Text.Remove(caller.TextLength - 1)
