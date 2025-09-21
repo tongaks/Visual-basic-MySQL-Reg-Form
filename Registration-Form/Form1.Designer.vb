@@ -51,7 +51,6 @@ Partial Class RegistrationForm
         EmailTxtBox = New TextBox()
         Label8 = New Label()
         ContactNoTxtBox = New TextBox()
-        Label7 = New Label()
         SexCmbBox = New ComboBox()
         Label5 = New Label()
         SuffixCmbBox = New ComboBox()
@@ -66,6 +65,16 @@ Partial Class RegistrationForm
         MiddleNameTxtBox = New TextBox()
         FirstNameTxtBox = New TextBox()
         BackgroundWorker1 = New ComponentModel.BackgroundWorker()
+        Label25 = New Label()
+        Label26 = New Label()
+        Label27 = New Label()
+        ComboBox1 = New ComboBox()
+        Label28 = New Label()
+        Label29 = New Label()
+        Label30 = New Label()
+        ComboBox2 = New ComboBox()
+        Label31 = New Label()
+        Label32 = New Label()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         SuspendLayout()
@@ -99,7 +108,7 @@ Partial Class RegistrationForm
         ViewRecordBtn.BackColor = Color.DarkSalmon
         ViewRecordBtn.FlatAppearance.BorderSize = 0
         ViewRecordBtn.FlatStyle = FlatStyle.Flat
-        ViewRecordBtn.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        ViewRecordBtn.Font = New Font("Segoe UI Black", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         ViewRecordBtn.ForeColor = SystemColors.ControlLightLight
         ViewRecordBtn.Location = New Point(592, 13)
         ViewRecordBtn.Name = "ViewRecordBtn"
@@ -111,7 +120,7 @@ Partial Class RegistrationForm
         ' Label22
         ' 
         Label22.AutoSize = True
-        Label22.Font = New Font("Segoe UI Black", 14F, FontStyle.Bold)
+        Label22.Font = New Font("Segoe UI Black", 14.0F, FontStyle.Bold)
         Label22.ForeColor = SystemColors.ControlLightLight
         Label22.Location = New Point(13, 15)
         Label22.Name = "Label22"
@@ -122,6 +131,16 @@ Partial Class RegistrationForm
         ' Panel2
         ' 
         Panel2.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        Panel2.Controls.Add(Label32)
+        Panel2.Controls.Add(Label31)
+        Panel2.Controls.Add(Label28)
+        Panel2.Controls.Add(Label29)
+        Panel2.Controls.Add(Label30)
+        Panel2.Controls.Add(ComboBox2)
+        Panel2.Controls.Add(Label25)
+        Panel2.Controls.Add(Label26)
+        Panel2.Controls.Add(Label27)
+        Panel2.Controls.Add(ComboBox1)
         Panel2.Controls.Add(TextBox1)
         Panel2.Controls.Add(Label24)
         Panel2.Controls.Add(Label23)
@@ -145,7 +164,6 @@ Partial Class RegistrationForm
         Panel2.Controls.Add(EmailTxtBox)
         Panel2.Controls.Add(Label8)
         Panel2.Controls.Add(ContactNoTxtBox)
-        Panel2.Controls.Add(Label7)
         Panel2.Controls.Add(SexCmbBox)
         Panel2.Controls.Add(Label5)
         Panel2.Controls.Add(SuffixCmbBox)
@@ -182,9 +200,9 @@ Partial Class RegistrationForm
         ' 
         Label24.Anchor = AnchorStyles.Top
         Label24.AutoSize = True
-        Label24.Font = New Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label24.Font = New Font("Segoe UI", 9.0F, FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label24.ForeColor = SystemColors.ControlDarkDark
-        Label24.Location = New Point(202, 285)
+        Label24.Location = New Point(205, 262)
         Label24.Name = "Label24"
         Label24.Size = New Size(70, 16)
         Label24.TabIndex = 1036
@@ -194,9 +212,9 @@ Partial Class RegistrationForm
         ' 
         Label23.Anchor = AnchorStyles.Top
         Label23.AutoSize = True
-        Label23.Font = New Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label23.Font = New Font("Segoe UI", 9.0F, FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label23.ForeColor = SystemColors.ControlDarkDark
-        Label23.Location = New Point(122, 285)
+        Label23.Location = New Point(125, 262)
         Label23.Name = "Label23"
         Label23.Size = New Size(50, 16)
         Label23.TabIndex = 1035
@@ -232,7 +250,7 @@ Partial Class RegistrationForm
         Label20.AutoSize = True
         Label20.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label20.ForeColor = Color.Firebrick
-        Label20.Location = New Point(123, 386)
+        Label20.Location = New Point(124, 363)
         Label20.Name = "Label20"
         Label20.Size = New Size(51, 13)
         Label20.TabIndex = 1033
@@ -241,7 +259,7 @@ Partial Class RegistrationForm
         ' PostalCodeTxtBox
         ' 
         PostalCodeTxtBox.Anchor = AnchorStyles.Top
-        PostalCodeTxtBox.Location = New Point(389, 359)
+        PostalCodeTxtBox.Location = New Point(122, 387)
         PostalCodeTxtBox.Margin = New Padding(3, 2, 3, 2)
         PostalCodeTxtBox.Name = "PostalCodeTxtBox"
         PostalCodeTxtBox.Size = New Size(79, 23)
@@ -252,7 +270,7 @@ Partial Class RegistrationForm
         Label18.Anchor = AnchorStyles.Top
         Label18.AutoSize = True
         Label18.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        Label18.Location = New Point(306, 361)
+        Label18.Location = New Point(39, 389)
         Label18.Name = "Label18"
         Label18.Size = New Size(73, 17)
         Label18.TabIndex = 1032
@@ -262,7 +280,7 @@ Partial Class RegistrationForm
         ' 
         Label19.Anchor = AnchorStyles.Top
         Label19.AutoSize = True
-        Label19.Location = New Point(363, 363)
+        Label19.Location = New Point(586, 367)
         Label19.Name = "Label19"
         Label19.Size = New Size(0, 16)
         Label19.TabIndex = 1031
@@ -272,7 +290,7 @@ Partial Class RegistrationForm
         Label17.Anchor = AnchorStyles.Top
         Label17.AutoSize = True
         Label17.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        Label17.Location = New Point(34, 361)
+        Label17.Location = New Point(35, 338)
         Label17.Name = "Label17"
         Label17.Size = New Size(83, 17)
         Label17.TabIndex = 1030
@@ -282,7 +300,7 @@ Partial Class RegistrationForm
         ' 
         Label16.Anchor = AnchorStyles.Top
         Label16.AutoSize = True
-        Label16.Location = New Point(76, 363)
+        Label16.Location = New Point(77, 340)
         Label16.Name = "Label16"
         Label16.Size = New Size(0, 16)
         Label16.TabIndex = 1029
@@ -291,10 +309,10 @@ Partial Class RegistrationForm
         ' 
         MunicipalityCmbBox.Anchor = AnchorStyles.Top
         MunicipalityCmbBox.FormattingEnabled = True
-        MunicipalityCmbBox.Location = New Point(122, 359)
+        MunicipalityCmbBox.Location = New Point(123, 336)
         MunicipalityCmbBox.Margin = New Padding(3, 2, 3, 2)
         MunicipalityCmbBox.Name = "MunicipalityCmbBox"
-        MunicipalityCmbBox.Size = New Size(157, 24)
+        MunicipalityCmbBox.Size = New Size(118, 24)
         MunicipalityCmbBox.TabIndex = 1015
         ' 
         ' RegisterBtn
@@ -303,7 +321,7 @@ Partial Class RegistrationForm
         RegisterBtn.BackColor = Color.SteelBlue
         RegisterBtn.FlatAppearance.BorderSize = 0
         RegisterBtn.FlatStyle = FlatStyle.Flat
-        RegisterBtn.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        RegisterBtn.Font = New Font("Segoe UI Black", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RegisterBtn.ForeColor = SystemColors.ControlLightLight
         RegisterBtn.Location = New Point(591, 429)
         RegisterBtn.Name = "RegisterBtn"
@@ -318,7 +336,7 @@ Partial Class RegistrationForm
         Label15.AutoSize = True
         Label15.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label15.ForeColor = Color.Firebrick
-        Label15.Location = New Point(122, 330)
+        Label15.Location = New Point(123, 307)
         Label15.Name = "Label15"
         Label15.Size = New Size(51, 13)
         Label15.TabIndex = 1028
@@ -366,7 +384,7 @@ Partial Class RegistrationForm
         Label11.AutoSize = True
         Label11.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label11.ForeColor = Color.Firebrick
-        Label11.Location = New Point(267, 187)
+        Label11.Location = New Point(250, 185)
         Label11.Name = "Label11"
         Label11.Size = New Size(51, 13)
         Label11.TabIndex = 1024
@@ -424,26 +442,15 @@ Partial Class RegistrationForm
         ContactNoTxtBox.Size = New Size(191, 23)
         ContactNoTxtBox.TabIndex = 1009
         ' 
-        ' Label7
-        ' 
-        Label7.Anchor = AnchorStyles.Top
-        Label7.AutoSize = True
-        Label7.Font = New Font("Segoe UI", 10F)
-        Label7.Location = New Point(237, 160)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(31, 18)
-        Label7.TabIndex = 1020
-        Label7.Text = "Sex"
-        ' 
         ' SexCmbBox
         ' 
         SexCmbBox.Anchor = AnchorStyles.Top
         SexCmbBox.FormattingEnabled = True
         SexCmbBox.Items.AddRange(New Object() {"Male", "Female"})
-        SexCmbBox.Location = New Point(267, 159)
+        SexCmbBox.Location = New Point(250, 159)
         SexCmbBox.Margin = New Padding(3, 2, 3, 2)
         SexCmbBox.Name = "SexCmbBox"
-        SexCmbBox.Size = New Size(98, 24)
+        SexCmbBox.Size = New Size(91, 24)
         SexCmbBox.TabIndex = 1006
         ' 
         ' Label5
@@ -465,7 +472,7 @@ Partial Class RegistrationForm
         SuffixCmbBox.Location = New Point(123, 159)
         SuffixCmbBox.Margin = New Padding(3, 2, 3, 2)
         SuffixCmbBox.Name = "SuffixCmbBox"
-        SuffixCmbBox.Size = New Size(98, 24)
+        SuffixCmbBox.Size = New Size(90, 24)
         SuffixCmbBox.TabIndex = 1004
         ' 
         ' Label1
@@ -493,7 +500,7 @@ Partial Class RegistrationForm
         Label3.Anchor = AnchorStyles.Top
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        Label3.Location = New Point(13, 304)
+        Label3.Location = New Point(14, 281)
         Label3.Name = "Label3"
         Label3.Size = New Size(101, 17)
         Label3.TabIndex = 1011
@@ -535,7 +542,7 @@ Partial Class RegistrationForm
         ' AddressTxtBox
         ' 
         AddressTxtBox.Anchor = AnchorStyles.Top
-        AddressTxtBox.Location = New Point(122, 303)
+        AddressTxtBox.Location = New Point(123, 280)
         AddressTxtBox.Margin = New Padding(3, 2, 3, 2)
         AddressTxtBox.Name = "AddressTxtBox"
         AddressTxtBox.Size = New Size(534, 23)
@@ -568,9 +575,116 @@ Partial Class RegistrationForm
         FirstNameTxtBox.Size = New Size(219, 23)
         FirstNameTxtBox.TabIndex = 1001
         ' 
+        ' Label25
+        ' 
+        Label25.Anchor = AnchorStyles.Top
+        Label25.AutoSize = True
+        Label25.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label25.ForeColor = Color.Firebrick
+        Label25.Location = New Point(318, 362)
+        Label25.Name = "Label25"
+        Label25.Size = New Size(51, 13)
+        Label25.TabIndex = 1041
+        Label25.Text = "Required"
+        ' 
+        ' Label26
+        ' 
+        Label26.Anchor = AnchorStyles.Top
+        Label26.AutoSize = True
+        Label26.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
+        Label26.Location = New Point(251, 338)
+        Label26.Name = "Label26"
+        Label26.Size = New Size(60, 17)
+        Label26.TabIndex = 1040
+        Label26.Text = "Province"
+        ' 
+        ' Label27
+        ' 
+        Label27.Anchor = AnchorStyles.Top
+        Label27.AutoSize = True
+        Label27.Location = New Point(293, 339)
+        Label27.Name = "Label27"
+        Label27.Size = New Size(0, 16)
+        Label27.TabIndex = 1039
+        ' 
+        ' ComboBox1
+        ' 
+        ComboBox1.Anchor = AnchorStyles.Top
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Location = New Point(317, 335)
+        ComboBox1.Margin = New Padding(3, 2, 3, 2)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(111, 24)
+        ComboBox1.TabIndex = 1038
+        ' 
+        ' Label28
+        ' 
+        Label28.Anchor = AnchorStyles.Top
+        Label28.AutoSize = True
+        Label28.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label28.ForeColor = Color.Firebrick
+        Label28.Location = New Point(509, 361)
+        Label28.Name = "Label28"
+        Label28.Size = New Size(51, 13)
+        Label28.TabIndex = 1045
+        Label28.Text = "Required"
+        ' 
+        ' Label29
+        ' 
+        Label29.Anchor = AnchorStyles.Top
+        Label29.AutoSize = True
+        Label29.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
+        Label29.Location = New Point(442, 337)
+        Label29.Name = "Label29"
+        Label29.Size = New Size(64, 17)
+        Label29.TabIndex = 1044
+        Label29.Text = "Barangay"
+        ' 
+        ' Label30
+        ' 
+        Label30.Anchor = AnchorStyles.Top
+        Label30.AutoSize = True
+        Label30.Location = New Point(484, 338)
+        Label30.Name = "Label30"
+        Label30.Size = New Size(0, 16)
+        Label30.TabIndex = 1043
+        ' 
+        ' ComboBox2
+        ' 
+        ComboBox2.Anchor = AnchorStyles.Top
+        ComboBox2.FormattingEnabled = True
+        ComboBox2.Location = New Point(508, 334)
+        ComboBox2.Margin = New Padding(3, 2, 3, 2)
+        ComboBox2.Name = "ComboBox2"
+        ComboBox2.Size = New Size(111, 24)
+        ComboBox2.TabIndex = 1042
+        ' 
+        ' Label31
+        ' 
+        Label31.Anchor = AnchorStyles.Top
+        Label31.AutoSize = True
+        Label31.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label31.ForeColor = Color.Firebrick
+        Label31.Location = New Point(123, 412)
+        Label31.Name = "Label31"
+        Label31.Size = New Size(51, 13)
+        Label31.TabIndex = 1046
+        Label31.Text = "Required"
+        ' 
+        ' Label32
+        ' 
+        Label32.Anchor = AnchorStyles.Top
+        Label32.AutoSize = True
+        Label32.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
+        Label32.Location = New Point(219, 162)
+        Label32.Name = "Label32"
+        Label32.Size = New Size(29, 17)
+        Label32.TabIndex = 1047
+        Label32.Text = "Sex"
+        ' 
         ' RegistrationForm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 16F)
+        AutoScaleDimensions = New SizeF(7.0F, 16.0F)
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
         BackColor = SystemColors.ButtonFace
@@ -618,7 +732,6 @@ Partial Class RegistrationForm
     Friend WithEvents EmailTxtBox As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents ContactNoTxtBox As TextBox
-    Friend WithEvents Label7 As Label
     Friend WithEvents SexCmbBox As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents SuffixCmbBox As ComboBox
@@ -633,5 +746,15 @@ Partial Class RegistrationForm
     Friend WithEvents MiddleNameTxtBox As TextBox
     Friend WithEvents FirstNameTxtBox As TextBox
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Label25 As Label
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Label27 As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label28 As Label
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Label30 As Label
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Label32 As Label
+    Friend WithEvents Label31 As Label
 
 End Class
